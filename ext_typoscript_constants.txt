@@ -1,0 +1,12 @@
+plugin.tx_ageverify {
+	templateRootPath = EXT:ageverify/Resources/Private/Templates/
+	partialRootPath = EXT:ageverify/Resources/Private/Partials/
+	layoutRootPath = EXT:ageverify/Resources/Private/Layouts/
+
+	javascript {
+		cookie-js = EXT:ageverify/Resources/Public/JavaScript/js.cookie-2.2.1.min.js
+		ageverification = EXT:ageverify/Resources/Public/JavaScript/ageverification.js
+	}
+	# cat=Age Verification; type=string; label=Age Verification page Url, You can specify a PAGE ID/Path/URL
+	verification_page_url =
+}

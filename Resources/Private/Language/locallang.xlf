@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-09-20UTC13:46:140">
+		<header>
+			<authorName>Andreas Sommer</authorName>
+			<authorEmail>a.sommer@t3ext.com</authorEmail>
+		</header>
+		<body>
+			<trans-unit id="tx_ageverify.pi1.title">
+				<source>Age Verification</source>
+			</trans-unit>
+
+			<trans-unit id="tx_ageverify.noscript_message">
+				<source>JavaScript is disabled! To proceed with this website, please activate JavaScript in your browser settings!</source>
+			</trans-unit>
+
+			<trans-unit id="tx_ageverify.flex.sheet.title">
+				<source>Age Verification Configuration</source>
+			</trans-unit>
+			<trans-unit id="tx_ageverify.flex.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_ageverify.flex.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_ageverify.flex.confirm_button">
+				<source>Confirm Button</source>
+			</trans-unit>
+			<trans-unit id="tx_ageverify.flex.confirm">
+				<source>Confirm</source>
+			</trans-unit>
+			<trans-unit id="tx_ageverify.flex.deny_button">
+				<source>Deny Button</source>
+			</trans-unit>
+			<trans-unit id="tx_ageverify.flex.deny">
+				<source>Deny</source>
+			</trans-unit>
+			<trans-unit id="tx_ageverify.flex.deny_page">
+				<source>Redirect to page in case of a denial</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

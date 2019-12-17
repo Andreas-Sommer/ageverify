@@ -1,0 +1,54 @@
+lib.verificationPageUrl = TEXT
+lib.verificationPageUrl.typolink {
+	parameter = {$plugin.tx_ageverify.verification_page_url}
+	returnLast = url
+	forceAbsoluteUrl = 1
+	forceAbsoluteUrl.scheme = https
+}
+
+page {
+	includeJSFooterlibs.cookie-js = {$plugin.tx_ageverify.javascript.cookie-js}
+	includeJSFooter.ageverification = {$plugin.tx_ageverify.javascript.ageverification}
+
+	headerData {
+		# Redirect in case the user has disabled his JavaScript
+		1576492584 = COA
+		1576492584 {
+			wrap = <noscript>|</noscript>
+			10 = TEXT
+			10.value = html { display: none !important; }
+			10.wrap = <style type="text/css">|</style>
+
+			20 < lib.verificationPageUrl
+			20.wrap = <meta http-equiv="refresh" content="0; url=|" />
+		}
+	}
+
+	footerData {
+		1576492585 = COA
+		1576492585 {
+			wrap = <script type="text/javascript">|</script>
+
+			10 = TEXT
+			10.value = console.log("cannot create redirect url");
+			10.override.cObject < lib.verificationPageUrl
+			10.override.wrap = let _avurl = "|";
+			10.override.required = 1
+
+			20 = TEXT
+			20 {
+				stdWrap.if.isFalse.dataWrap = {$plugin.tx_ageverify.verification_page_url}
+				required = 1
+				value = Constant plugin.tx_ageverify.verification_page_url is not set!
+				wrap = console.log("|");
+			}
+		}
+	}
+}
+
+[globalVar = TSFE:id = {$plugin.tx_ageverify.verification_page_url}]
+	# unset no js redirect
+	page.headerData.1576492584 >
+	# unset javascript let _avurl variable
+	page.footerData.1576492585 >
+[global]

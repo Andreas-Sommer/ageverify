@@ -1,0 +1,35 @@
+<html data-namespace-typo3-fluid="true"
+	  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:layout name="Default" />
+
+<f:section name="main">
+	<noscript class="container">
+		<div class="mt-5 pt-4 alert alert-danger">
+			<f:format.html><f:translate key="tx_ageverify.noscript_message" /></f:format.html>
+		</div>
+		<style type="text/css">.modal-dialog { display: none; }</style>
+	</noscript>
+
+	<div class="age-verify">
+		<div class="show" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">{settings.title}</h5>
+					</div>
+					<div class="modal-body">
+						<p><f:format.html>{settings.description}</f:format.html></p>
+					</div>
+					<div class="modal-footer">
+						<f:if condition="{settings.deny_pid}">
+							<a href="{f:uri.page(pageUid: settings.deny_pid)}" class="btn btn-secondary">{settings.deny}</a>
+						</f:if>
+						<button type="button" id="confirmVerification" class="btn btn-primary" onclick="confirmVerification()">{settings.confirm}</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</f:section>
+</html>
